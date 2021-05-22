@@ -14,11 +14,11 @@
   "version": "0.0.2",
   "main": "dist/index.js",
   "files": [
-    "dist/index.d.ts"
+    "dist/*"
   ],
   "scripts": {
-    "build": "yarn clean && yarn tsc",
-    "build:watch": "yarn build --watch",
+    "build": "yarn clean && yarn tsc && cp src/*.js dist",
+    "build:watch": "yarn build && yarn tsc --watch",
     "clean": "rm -rf dist/*",
     "lint:fix": "yarn lint:fix:md && yarn lint:fix:package && yarn lint:fix:ts && prettier --write ./src && yarn typecheck",
     "lint:fix:md": "prettier --write *.md",
