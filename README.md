@@ -108,18 +108,7 @@ Defaults to `true`. Recommended: `true`.
 </td>
   <td>boolean | undefined</td>
 </tr>
-<tr>
-  <td>registration.entry</td>
-<td>
 
-The webpack [entry](https://webpack.js.org/concepts/entry-points/) to inject the auto registration code into. The resulting bundle must be present on all pages that expect to register the service worker.
-
-Defaults to `main`, the [default entry](https://webpack.js.org/concepts/entry-points/#single-entry-shorthand-syntax.)
-
-</td>
-</td>
-  <td>string | undefined</td>
-</tr>
 <tr>
   <td>registration.path</td>
 <td>
@@ -138,8 +127,7 @@ Defaults to `/service-worker.js`.
 
 The [scope](https://developers.google.com/web/ilt/pwa/introduction-to-service-worker#registration_and_scope) of the service worker determines which files the service worker controls, in other words, from which path the service worker will intercept requests. The default scope is the location of the service worker file, and extends to all directories below. So if service-worker.js is located in the root directory, the service worker will control requests from all files at this domain.
 
-Defaults to `undefined` which sets the default scope as described above.
-The registration path tells the browser where your service worker is located.
+Defaults to your [next.config.js basePath](https://nextjs.org/docs/api-reference/next.config.js/basepath).
 
 </td>
 </td>
