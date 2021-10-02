@@ -151,11 +151,13 @@ Defaults to `GenerateSW` which will generate a service worker with the workbox r
 
 Check out the [next-service-worker-example](https://github.com/tatethurston/next-service-worker/blob/master/examples/next-service-worker-example/). The only change from the default NextJS setup is the addition of `next.config.js`!
 
-## Warning ⚠️
+## Common Service Worker Pitfalls ⚠️
 
-You must serve your next application over HTTPS in production environments. [Service Workers must be served from the site's origin over HTTPS](https://developers.google.com/web/fundamentals/primers/service-workers). A special case is made for `localhost`, so this is generally not necessary during local development. HTTPS is _not_ handled by this library.
+You must serve your next application over HTTPS in production environments. [Service Workers must be served from the site's origin over HTTPS](https://developers.google.com/web/fundamentals/primers/service-workers).
 
-The origin constraint means that the service worker can not control `mysite.com` if it was served from something like `mycdn.mysite.com`. If you serve Next's public folder as is, things will work out of the box. If you move Next's public folder contents to a CDN and serve from there additional configuration may be necessary.
+Most browsers make special case `localhost`, so this is generally not necessary during local development. HTTPS is _not_ handled by this library.
+
+The service worker origin constraint means that the service worker can not control `mysite.com` if it was served from a subdomain such as `mycdn.mysite.com`. If you serve from Next's public folder, things will work out of the box. If you move Next's public folder contents to a CDN and serve the service worker from that CDN additional configuration may be necessary.
 
 ## Related Projects
 
