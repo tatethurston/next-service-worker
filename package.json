@@ -1,6 +1,6 @@
 {
   "name": "next-service-worker",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Add a service worker powered by Workbox to your Next.js application",
   "license": "MIT",
   "author": "Tate <tatethurston@gmail.com>",
