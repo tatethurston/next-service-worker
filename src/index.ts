@@ -12,7 +12,7 @@ interface NextConfig {
   basePath: string;
   target: string;
   assetPrefix: string;
-  webpack: (config: Configuration, options: NextOptions) => Configuration;
+  webpack?: (config: Configuration, options: NextOptions) => Configuration;
 }
 
 // https://github.com/vercel/next.js/blob/08baf526ff236d6c7e74e01ce9fbc35fce7f4565/packages/next/build/webpack-config.ts#L180
@@ -103,6 +103,10 @@ module.exports = function withServiceWorker(
   return {
     ...nextConfig,
     webpack(config: Configuration, options: NextOptions): Configuration {
+      if (nextConfig.webpack) {
+        config = nextConfig.webpack(config, options);
+      }
+
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       if (!config.plugins) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-return
