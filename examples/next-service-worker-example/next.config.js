@@ -1,12 +1,15 @@
-const withServiceWorker = require("next-service-worker");
+const { serviceWorker } = require("next-service-worker");
 
-module.exports = withServiceWorker({
-  // next config here...
-  serviceWorker: {
-    // next-service-worker config here...
-    enableWorkboxLogging: true,
-    // workbox: {
-    // workbox config here...
-    //},
-  },
+const withServiceWorker = serviceWorker({
+  // next-service-worker config here...
+  enableWorkboxLogging: true,
+  // workbox: {
+  // workbox config here...
+  //},
 });
+
+const nextConfig = {
+  reactStrictMode: true,
+};
+
+module.exports = withServiceWorker(nextConfig);

@@ -1,0 +1,7 @@
+dist
+coverage
+.next
+.swc
+out
+node_modules
+pnpm-lock.yaml

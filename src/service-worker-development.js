@@ -1,16 +1,12 @@
-// eslint-disable-next-line no-undef
+/* eslint-disable no-undef */
 self.addEventListener("install", () => {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call,no-undef
   self.skipWaiting();
 });
 
-// eslint-disable-next-line no-undef
 self.addEventListener("activate", (event) => {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access,no-undef
   event.waitUntil(clients.claim());
 });
 
-// eslint-disable-next-line no-undef
 console.info(
-  "[next-service-worker] The service worker has been disabled in development. It will be generated for production builds. Run `next build` to see the service worker. You may opt into service worker generation in local development by setting `serviceWorker.enableInDevelopment: true` in your next.config.js"
+  "[next-service-worker] This is a noop service worker for local development. This ensures that a previously installed service worker is ejected. Your configured service worker will be generated in production builds. If you want to inspect the production service worker locally, you can run `next build`. Alternatively, you can opt into production service worker generation in local development by setting `serviceWorker.enableInDevelopment: true` in your next.config.js. See https://github.com/tatethurston/next-service-worker for configuration options."
 );
