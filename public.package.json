@@ -1,0 +1,25 @@
+{
+  "name": "next-service-worker",
+  "version": "0.0.5",
+  "description": "A Next.js integration that generates a Service Worker. Powered by Workbox.",
+  "license": "MIT",
+  "author": "Tate <tatethurston@gmail.com>",
+  "homepage": "https://github.com/tatethurston/next-service-worker#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tatethurston/next-service-worker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tatethurston/next-service-worker/issues"
+  },
+  "main": "./index.js",
+  "sideEffects": false,
+  "types": "index.d.ts",
+  "dependencies": {
+    "service-worker-webpack": "^0.0.9"
+  },
+  "peerDependencies": {
+    "next": ">=9.0.0"
+  },
+  "keywords": ["next", "nextjs", "offline", "pwa", "service worker", "workbox"]
+}
