@@ -67,7 +67,7 @@ const manifestExcludes = [
   /\.map$/,
 ];
 
-export function serviceWorker(serviceWorkerConfig: ServiceWorkerConfig) {
+export function serviceWorker(serviceWorkerConfig: ServiceWorkerConfig = {}) {
   return function (nextConfig: NextConfig): NextConfig {
     return {
       ...nextConfig,
