@@ -27,19 +27,36 @@ A minimal wrapper around [Workbox](https://developers.google.com/web/tools/workb
 2. Update your `next.config.js`:
 
    ```diff
-    + const { serviceWorker } = require("next-service-worker");
-    + const withServiceWorker = serviceWorker();
+   + const { serviceWorker } = require("next-service-worker");
+   + const withServiceWorker = serviceWorker();
 
-    /** @type {import('next').NextConfig} */
-    const nextConfig = {
-      reactStrictMode: true,
-    };
+   /** @type {import('next').NextConfig} */
+   const nextConfig = {
+     reactStrictMode: true,
+   };
 
-    - module.exports = nextConfig;
-    + module.exports = withServiceWorker(nextConfig);
+   - module.exports = nextConfig;
+   + module.exports = withServiceWorker(nextConfig);
    ```
 
-3. That's it! A service worker that precaches all of your build's static assets will be generated. Static assets will be served from the service worker's cache instead of making network calls, speeding up your page views and enabling offline viewing 🙌.
+3. (Optional): Add the generated service worker files to your `.gitignore`:
+
+   ```diff
+   # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+   # dependencies
+   /node_modules
+   /.pnp
+   .pnp.js
+
+   ...
+
+   + # generated service worker (next-service-worker)
+   + public/service-worker.js
+   + public/workbox-*.js
+   ```
+
+4. That's it! A service worker that precaches all of your build's static assets will be generated. Static assets will be served from the service worker's cache instead of making network calls, speeding up your page views and enabling offline viewing 🙌.
 
 ## Verification 🤔
 

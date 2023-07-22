@@ -12,14 +12,31 @@
   "bugs": {
     "url": "https://github.com/tatethurston/next-service-worker/issues"
   },
-  "main": "./index.js",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "lint": "eslint .",
+    "package:build": "pnpm clean && pnpm build && pnpm package:prune",
+    "package:prune": "find dist -name test.* -delete"
+  },
   "sideEffects": false,
   "types": "index.d.ts",
   "dependencies": {
-    "service-worker-webpack": "^0.0.9"
+    "service-worker-webpack": "^1.0.0"
   },
   "peerDependencies": {
     "next": ">=9.0.0"
   },
-  "keywords": ["next", "nextjs", "offline", "pwa", "service worker", "workbox"]
+  "devDependencies": {
+    "webpack": "^5.88.2"
+  },
+  "keywords": [
+    "next",
+    "nextjs",
+    "offline",
+    "pwa",
+    "service worker",
+    "workbox"
+  ]
 }
