@@ -1,6 +1,6 @@
 {
   "name": "next-service-worker",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "description": "A Next.js plugin that generates a Service Worker. Powered by Workbox.",
   "license": "MIT",
   "author": "Tate <tatethurston@gmail.com>",
